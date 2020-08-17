@@ -9,7 +9,7 @@ const index = (req, res) => {
 };
 
 const show = (req, res) => {
-    db.Game.findById({ id: req.params.id }, (err, foundGame) => {
+    db.Game.findById(req.params.id, (err, foundGame) => {
         if (err) console.log('Error in games#show:', err);
 
         res.send("Incomplete games#show controller function");
