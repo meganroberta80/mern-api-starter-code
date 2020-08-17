@@ -25,7 +25,7 @@ const create = (req, res) => {
 };
 
 const update = (req, res) => {
-    db.Game.findByIdAndUpdate(req.params.id, req.body, (err, updatedGame) => {
+    db.Game.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedGame) => {
         if (err) console.log('Error in games#update:', err);
 
         res.send("Incomplete games#update controller function");
