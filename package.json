@@ -1,7 +1,14 @@
 {
+  "name": "gamelib-api",
+  "version": "1.0.0",
+  "description": "Game API built with Node/Express and MongoDB",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
+  "author": "GA SEI",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.9.16",
