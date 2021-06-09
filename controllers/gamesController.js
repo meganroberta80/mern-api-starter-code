@@ -5,7 +5,7 @@ const index = (req, res) => {
     if (err) {
       console.log('Error in games#index:', err);
 
-      res.send("Incomplete games#index controller function");
+      return res.send("Incomplete games#index controller function");
     }
 
     res.send("Incomplete games#index controller function");
@@ -17,7 +17,7 @@ const show = (req, res) => {
     if (err) {
       console.log('Error in games#show:', err);
 
-      res.send("Incomplete games#show controller function");
+      return res.send("Incomplete games#show controller function");
     }
 
     res.send("Incomplete games#show controller function");
@@ -29,7 +29,7 @@ const create = (req, res) => {
     if (err) {
       console.log('Error in games#create:', err);
 
-      res.send("Incomplete games#create controller function");
+      return res.send("Incomplete games#create controller function");
     }
 
     res.send("Incomplete games#create controller function");
@@ -41,7 +41,7 @@ const update = (req, res) => {
     if (err) {
       console.log('Error in games#update:', err)
 
-      res.send("Incomplete games#update controller function");
+      return res.send("Incomplete games#update controller function");
     }
 
     res.send("Incomplete games#update controller function");
@@ -53,7 +53,7 @@ const destroy = (req, res) => {
     if (err) {
       console.log('Error in games#destroy:', err)
 
-      res.send("Incomplete games#destroy controller function");
+      return res.send("Incomplete games#destroy controller function");
     }
 
     res.send("Incomplete games#destroy controller function");
