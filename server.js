@@ -1,17 +1,20 @@
 // imports
 const express = require('express');
-const routes = require('./routes');
+const gamesController = require('./controllers/gamesController');
 
 const port = process.env.PORT || 4000;
 const app = express();
 
-// TODO: middleware - CORS
+// middleware
+// TODO: add CORS
 
-// middleware - JSON parsing
+// TODO: Add json parsing to get the form data
 // app.use(express.json());
 
-// middleware - API routes
-app.use('/api/v1/games', routes.games);
+// API routes
+app.use('/api/games', gamesController);
 
 // listen
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`)
+});

@@ -1,70 +1,50 @@
+const router = require('express').Router();
 const db = require('../models');
 
-const index = (req, res) => {
+
+router.get('/', (req, res) => {
   db.Game.find({}, (err, foundGames) => {
-    if (err) {
-      console.log('Error in games#index:', err);
-
-      return res.send("Incomplete games#index controller function");
-    }
-
-    res.send("Incomplete games#index controller function");
+    if (err) return console.log(err);
+    
+    res.send("Hit the games index route");
   });
-};
+});
 
-const show = (req, res) => {
+
+router.get('/:id', (req, res) => {
   db.Game.findById(req.params.id, (err, foundGame) => {
-    if (err) {
-      console.log('Error in games#show:', err);
-
-      return res.send("Incomplete games#show controller function");
-    }
-
-    res.send("Incomplete games#show controller function");
+    if (err) return console.log(err);
+    
+    res.send("Hit the games show route");
   });
-};
+});
 
-const create = (req, res) => {
+
+router.post('/', (req, res) => {
   db.Game.create(req.body, (err, savedGame) => {
-    if (err) {
-      console.log('Error in games#create:', err);
-
-      return res.send("Incomplete games#create controller function");
-    }
-
-    res.send("Incomplete games#create controller function");
+    if (err) return console.log(err);
+    
+    res.send("Hit the games create route");
   });
-};
+});
 
-const update = (req, res) => {
+
+router.put('/:id', (req, res) => {
   db.Game.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedGame) => {
-    if (err) {
-      console.log('Error in games#update:', err)
-
-      return res.send("Incomplete games#update controller function");
-    }
-
-    res.send("Incomplete games#update controller function");
+    if (err) return console.log(err);
+    
+    res.send("Hit the games update route");
   });
-};
+});
 
-const destroy = (req, res) => {
+
+router.delete('/:id', (req, res) => {
   db.Game.findByIdAndDelete(req.params.id, (err, deletedGame) => {
-    if (err) {
-      console.log('Error in games#destroy:', err)
+    if (err) return console.log(err);
 
-      return res.send("Incomplete games#destroy controller function");
-    }
-
-    res.send("Incomplete games#destroy controller function");
+    res.send("Hit the games destroy route");
   });
-};
+});
 
 
-module.exports = {
-  index,
-  show,
-  create,
-  update,
-  destroy,
-};
+module.exports = router;
