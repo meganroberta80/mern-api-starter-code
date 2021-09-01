@@ -1,7 +1,7 @@
 const db = require('./models');
 const data = require('./gameData.json');
 
-// Delete
+// Delete - Clear out the DB
 db.Game.deleteMany({}, (err, result) => {
   if (err) {
     console.log(err);
@@ -10,7 +10,7 @@ db.Game.deleteMany({}, (err, result) => {
   
   console.log(result.deletedCount,'games deleted');
 
-  // Create
+  // Create - Add some games to the DB
   db.Game.create(data.games, (err, seededGames) => {
     if (err) {
       console.log(err);
