@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const gamesController = require('./controllers/gamesController');
 
+// Pull in Heroku's port if hosted on Heroku
+// otherwise pull in PORT 4000
 const port = process.env.PORT || 4000;
 const app = express();
 
